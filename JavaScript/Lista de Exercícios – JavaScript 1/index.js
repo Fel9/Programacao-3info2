@@ -21,7 +21,7 @@ function calculaSono() {
   const filmeRomantico = 90
   const filmeInvestigacao = 110
 
-  document.getElementById('sono').innerHTML = `O garoto dormiu: ${filmeRomantico - inputSonoGaroto} minutos. A garota dormiu ${filmeInvestigacao - inputSonoGarota} minutos`
+  document.getElementById('q5').innerHTML = `O garoto dormiu: ${filmeRomantico - inputSonoGaroto} minutos. A garota dormiu ${filmeInvestigacao - inputSonoGarota} minutos`
 
 }
 
@@ -34,6 +34,6 @@ function calculaNota() {
   var notaInicial = document.getElementById('notaIni').value
   var numeroTweets = document.getElementById('tweets').value
 
-  document.getElementById('nota').innerHTML = `A nota final é: ${notaInicial - (Math.floor(numeroTweets / 100))}`
+  document.getElementById('q3').innerHTML = `A nota final é: ${notaInicial - (Math.floor(numeroTweets / 100))}`
 
 }
