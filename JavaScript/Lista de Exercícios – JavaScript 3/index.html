@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Exercícios ─ JavaScript 2</title>
+</head>
+
+<body>
+  <h3>Questão 9</h3>
+  <p>
+    Escreva um algoritmo que leia as idades de 2 homens e 2 mulheres (considere
+    que as idades dos homens serão sempre diferentes, bem como as das mulheres).
+    Calcule e escreva a soma das idades do homem mais velho com a mulher mais
+    nova, e o produto das idades do homem mais novo com a mulher mais velha.
+  </p>
+
+  <label for="idade"> Idade do primeiro homem </label>
+  <br>
+  <input type="number" name="idade" id="idadeHomem" oninput="somaProdutoIdades()">
+
+  <br>
+  <br>
+
+  <label for="idade"> Idade do segundo homem </label>
+  <br>
+  <input type="number" name="idadeHomem2" id="idadeHomem2" oninput="somaProdutoIdades()">
+
+  <br>
+  <br>
+
+  <label for="idade"> Idade da primeira mulher </label>
+  <br>
+  <input type="number" name="idadeMulher" id="idadeMulher" oninput="somaProdutoIdades()">
+
+  <br>
+  <br>
+
+  <label for="idade"> Idade da segunda mulher </label>
+  <br>
+  <input type="number" name="idadeMulher2" id="idadeMulher2" oninput="somaProdutoIdades()">
+
+  <br>
+  <br>
+
+  <div id="q9"></div>
+
+
+  <!-- ────────────────────────────────────── -->
+
+  <h3>Questão 8</h3>
+  <p>
+    Escrever um algoritmo que leia valores inteiros em duas variáveis distintas e faça
+    o seguinte:
+    <ul>
+      <li>
+        Se o resto da divisão da primeira pela segunda for 1 mostre a soma dessas
+        variáveis mais o resto da divisão;
+      </li>
+
+      <li>
+        Se o resto for 2 escreva se o primeiro e o segundo valor são pares ou ímpares;
+      </li>
+
+      <li>
+        Se o resto for igual a 3 multiplique a soma dos valores lidos pelo primeiro;
+      </li>
+
+      <li>
+        Se o resto for igual a 4 divida a soma dos números lidos pelo segund0, se este
+        for diferente de zero. Em qualquer outra situação mostre o quadrado dos
+        números lidos.
+      </li>
+    </ul>
+  </p>
+
+  <label for="valor">Valor 1</label>
+  <br>
+  <input type="number" name="valor" id="valor" oninput="restoDivisao()">
+
+  <br>
+  <br>
+
+  <label for="valor2">Valor 2</label>
+  <br>
+  <input type="number" name="valor2" id="valor2" oninput="restoDivisao()">
+
+
+  <div id="q8"></div>
+
+  <!-- ────────────────────────────────────── -->
+
+
+  <h3>Questão 7</h3>
+  <p>
+    Escreva um programa em JavaScript que receba o nome de dois usuários, inverta-
+    os entre variáveis, e mostre-os na tela.
+  </p>
+
+  <label for="nome1">Insira um nome</label>
+  <br>
+  <input type="text" name="nome1" id="nome1" oninput="reverteNomes()">
+
+  <br>
+
+  <label for="nome2">Insira um segundo nome</label>
+  <br>
+  <input type="text" name="nome2" id="nome2" oninput="reverteNomes()">
+
+  <div id="q7"></div>
+
+
+
+
+  <!-- ────────────────────────────────────── -->
+
+  <h3>Questão 5</h3>
+  <p>
+    Osvlédson desenvolveu um website que recebe centenas de visitas diariamente.
+    Aproveitando seu sucesso, Osvlédson inscreveu o site nos anúncios do Google. O
+    Google vai pagar R$ 0,02 por cada clique nos anúncios do site. Escreva um
+    programa em JavaScript que ajude Osvlédson a saber quanto ele pode lucrar. O
+    programa deve solicitar o valor que Osvlédson deseja ganhar e deve informar
+    quantos cliques são necessários para que ele receba o valor desejado.
+  </p>
+
+  <label for="lucro">Lucro desejado (R$)</label>
+  <br>
+  <input type="text" name="lucro" id="lucro" oninput="adSense()">
+
+  <div id="q5"></div>
+</body>
+<script src="./index.js"></script>
+
+</html>
