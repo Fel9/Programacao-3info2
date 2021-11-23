@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ListaTarefa</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-bottom: 150%;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: black;
+            color: white;
+        }
+        .titulo{
+            font-size: 150%;
+        }
+        .botao{
+            margin-left: 0%;
+        }
+        #afazer{
+            text-align: center;
+        }
+        #lista{
+            align-self: start;
+            list-style-type: none;
+            font-size: 170%;
+            width: 40%;
+        }
+        button{
+            margin-left: 7%;
+            margin-bottom: 2%;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="titulo">
+    <h1>Minha lista de afazeres</h1>
+    </div>
+    
+    
+    <div class="insercao"><input type="text" id="afazer">
+    <button onclick="addTarefa()" class="botao">Adicionar Tarefa</button></div>
+    
+
+
+    <ul id="lista">
+
+    </ul>
+    <script>
+        let atividades = ["Atividade1", "Atividade2"]
+        
+        function novaTarefa() {
+            const lista = document.getElementById('lista')
+            lista.innerHTML = ""
+            for (atividade of atividades) {
+                const novoItem = document.createElement("li")
+                lista.appendChild(novoItem)
+                const texto = document.createTextNode(atividade)
+                novoItem.appendChild(texto)
+                novoItem.appendChild(excluir(atividade))
+            }
+        }
+
+        function excluir() {
+            let botaoExcluir = document.createElement("button")
+            const text = document.createTextNode("Excluir")
+            const pos = atividades.indexOf(atividade)
+            botaoExcluir.setAttribute("href", "#")
+            botaoExcluir.setAttribute("onclick", `excluirAtt("${pos}")`)
+            botaoExcluir.appendChild(text)
+            return botaoExcluir
+        }
+        
+        function excluirAtt(pos) {
+            atividades.splice(pos, 1)
+            novaTarefa()
+        }
+
+        function addTarefa() {
+            const novoItem = document.getElementById("afazer").value
+            atividades.push(novoItem)
+            novaTarefa()
+        }
+        novaTarefa()
+    </script>
+</body>
+</html>

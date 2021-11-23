@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cores</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        div{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        button{
+            margin: auto auto;
+            width: 60%;
+            height: 10%;
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button onclick="mudarcordefundo();">Clique para mundar a cor de fundo</button>
+    </div>
+
+    <script>
+        function mudarcordefundo(){
+            const listadecores = ["red", "green", "blue", "yellow", "purple", "black", "orange", "pink", "violet"]
+            const corEscolhida = listadecores[Math.floor(Math.random() * 9)]
+            
+            document.body.style.backgroundColor = corEscolhida
+        }
+
+        mudarcordefundo();
+    </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body{
+            background-color: lightblue;
+        }
+
+        .container{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .container div{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 10px auto;
+            padding: 5px;
+        }
+
+        .inputdetarefa{
+            border-bottom: gray 2px dashed;
+        }
+
+        form{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .listadeitens img{
+            position: absolute;
+            right: 20%;
+        }
+
+        ul{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            list-style: none;
+        }
+
+        li{
+            width: 60%;
+            height: 25px;
+            background-color: red;
+            border-radius: 8px;
+            border: gray solid 2px;
+            margin: 5px;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        input{
+            width: 40%;
+            height: 20px;
+            border-radius: 4px;
+            border: gray 2px solid;
+        }
+
+        button{
+            width: 10%;
+            height: 25px;
+            background-color: blue;
+            border-radius: 5px;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="titulo">
+            <h1>Lista de Tarefas</h1>
+        </div>
+        <div class="inputdetarefa">
+            <form action="javascript:adicionartarefa();" method="get">
+                <input type="text" name="" id="novo_item">
+                <button type="submit">Adicionar</button>
+            </form>
+        </div>
+        <div id="alerta" style="color: red; font-size: 18px;"></div>
+        <div class="listadeitens">
+            <ul id="listadetarefas"></ul>            
+        </div>
+    </div>
+
+
+    <script>
+        let atividades = ["Trabalho de Física", "Banco de Dados", "Projeto Integrador"];
+
+        function listartarefas(){
+            const listatarefas = document.getElementById("listadetarefas");
+            listatarefas.innerHTML = "";
+            for (atividade of atividades){
+                const novoItem = document.createElement("li");
+                listatarefas.appendChild(novoItem);
+                const novoText = document.createTextNode(atividade);
+                novoItem.appendChild(novoText);
+                novoItem.appendChild(botao_Excluir(atividade));
+            }
+        }
+
+        function adicionartarefa(){
+            document.getElementById("alerta").innerHTML = "";
+            const novoItem = document.getElementById("novo_item").value;
+            if (atividades.indexOf(novoItem) == -1){
+                if (novoItem.length >= 1){
+                    document.getElementById("novo_item").value = ""
+                    atividades.push(novoItem);
+                    listartarefas();
+                } else{
+                    document.getElementById("alerta").innerHTML = "Não é possível cadastras uma atividade Vazia!!!";
+                }
+            } else {
+                document.getElementById("alerta").innerHTML = "A atividade já está cadastrada!!!";
+            }
+        }
+
+        function botao_Excluir(atividade){
+            let botaoExcluir = document.createElement("img");
+            // const botaotext = document.createTextNode("Excluir");
+            const position = atividades.indexOf(atividade);
+            botaoExcluir.setAttribute("src", "https://lh3.googleusercontent.com/proxy/6-_l8XigDhHdeXWULCGahPWgCeGr9iTSaAObCJDNGLnKaVLYZjSwg2ZigDJJQGhgSlfycuatqEP0kT2VPKDtMliZQ_mlhRryXGAToCgcHmZx87Vb");
+            botaoExcluir.setAttribute("onclick", `ExcluirAtividade("${position}")`);
+            botaoExcluir.setAttribute("width", "25px");
+            botaoExcluir.setAttribute("height", "25px");
+            // botaoExcluir.appendChild(botaotext);
+            return botaoExcluir;
+        }
+
+        function ExcluirAtividade(position){
+            atividades.splice(position, 1);
+            listartarefas();
+        }
+
+        listartarefas();
+
+    </script>
+</body>
+</html>

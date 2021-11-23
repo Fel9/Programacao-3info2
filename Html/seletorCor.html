@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seletor por barra RGB</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="texto">
+    <h1>Seletor de cor</h1>
+    Vermelho <input onclick="selecionaCor()" type="range" max="255" id="red" /> <br>
+    Verde <input onclick="selecionaCor()" type="range" max="255" id="green" /> <br>
+    Azul <input onclick="selecionaCor()" type="range" max="255" id="blue" /> <br>
+    <h1>Valor em RGB</h1>
+    <input type="text" id="result" disabled />
+    </div>
+    <script>
+        function selecionaCor(){
+        var red = document.getElementById("red").value,
+        green = document.getElementById("green").value,
+        blue = document.getElementById("blue").value
+
+        document.getElementById("result").value = 
+        "(" + red + ", " + green + ", " + blue + ")"
+
+        document.body.style.background =
+        "rgb(" + red + ", " + green + ", " + blue + ")"
+        
+        if(red < 40 && green < 40 && blue < 40){
+            document.getElementById("texto").style.color = "white"
+        }
+    }
+    
+
+    selecionaCor()
+    </script>
+</body>
+</html>

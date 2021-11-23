@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trocaCorExercício</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        button {
+            color: white;
+            background-color: black;
+            border-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="mudarCor()">
+        Mudar cor do fundo aleatoriamente
+    </button>
+
+    <script>
+    function mudarCor(){
+        const cor = ["red", "green", "blue", "yellow", "purple", "magenta", "black"]
+        const corSelecionada = cor[Math.floor(Math.random() * 7)]
+        document.body.style.background = corSelecionada
+    }
+    </script>
+</body>
+</html>
