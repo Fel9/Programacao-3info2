@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jquery 2</title>
+</head>
+
+<body>
+  <h3>
+    1. Observe o trecho de código abaixo e selecione todos os elementos <li> dentro da
+      lista #viagens usando um seletor descendente:
+  </h3>
+  <div id="tours-wrapper">
+    <h1>Viagens Guiadas</h1>
+    <ul id="viagens">
+      <li class="america">
+        <h2>New York, New York</h2>
+        <span class="details">$1,899 por 7 noites</span>
+        <ul class="vote">
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+        </ul>
+      </li>
+      <li class="europe">
+        <h2>Paris, France</h2>
+        <span class="details">$2,499 por 7 noites</span>
+        <ul class="vote">
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+        </ul>
+      </li>
+      <li class="europe sale">
+        <h2>Madrid, Spain</h2>
+        <span class="details">$1,577 por 5 noites</span>
+        <ul class="vote">
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+        </ul>
+      </li>
+      <li class="asia">
+        <h2>Tokyo, Japan</h2>
+        <span class="details">$1,999 por 5 noites </span>
+        <ul class="vote">
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="sorting">
+      <li><a href="#">America</a></li>
+      <li><a href="#">Europe</a></li>
+      <li><a href="#">Asia</a></li>
+    </ul>
+
+    <div>
+      Código <br>
+      $(document).ready(() => {
+      $('#viagens li')
+      })
+    </div>
+  </div>
+
+  <h3> 2. Observando a resposta da questão anterior, parece que você selecionou mais do que
+    devia. Também foram selecionamos todos os itens da lista com id=”#vote”. Use
+    um seletor apropriado para selecionar apenas os itens
+    &ltli> que são filhos diretos
+    de #viagens.
+  </h3>
+  <div>
+    Código <br>
+
+    $(document).ready(() => {
+    $('#viagens>li')
+    })
+
+  </div>
+
+  <h3>
+    3. Ainda observando o trecho de código da questão 01, agora selecione todas viagens
+    que são da classe “asia” e todas que são da classe “sale”.
+  </h3>
+  <div>
+    Código <br>
+    $(document).ready(() => {
+    $('.asia, .sale')
+    })
+  </div>
+
+  <h3>
+    4. Agora tente usar um seletor para encontrar a primeira viagem.
+  </h3>
+  <div>
+    Código <br>
+    $(document).ready(() => {
+    $('.asia:first, .sale:first')
+    })
+  </div>
+
+  <h3>
+    5. Dentro da lista #tours, encontre os filhos diretos dos elementos <li> e, em
+      seguida, use o mesmo pseudo-seletor :even para selecionar todos os outros
+      elementos &ltli>.
+  </h3>
+  <div>
+    Código <br>
+    $(document).ready(() => {
+    $('#viagens>li:even')
+    })
+  </div>
+
+  <h3>
+    6. Agora observe o trecho de código abaixo. Como selecionar todas as férias
+    (id=#ferias) para América (class=”américa”) usando o método find?
+  </h3>
+  <div id="vacations-wrapper">
+    <h1>Pacotes de Férias</h1>
+    <ul id="ferias">
+      <li class="ferias america">
+        <h2>San Francisco, California</h2>
+        <span class="details">$700</span>
+      </li>
+      <li class="ferias america">
+        <h2>Washington DC, District of Columbia</h2>
+        <span class="details">$400</span>
+      </li>
+      <li class="ferias europe">
+        <h2>London, England</h2>
+        <span class="details">$1,100</span>
+      </li>
+      <li class="ferias asia">
+        <h2>Shanghai, China</h2>
+        <span class="details">$1,200</span>
+      </li>
+    </ul>
+    <ul class="sorting">
+      <li><a href="#">America</a></li>
+      <li><a href="#">Europe</a></li>
+      <li><a href="#">Asia</a></li>
+    </ul>
+    <div>
+      Código <br>
+      $(document).ready(() => {
+      $("#ferias").find('.america')
+      })
+    </div>
+
+
+    <h3>
+      7. Usando travessia ou filtragem, selecione o primeiro elemento <li> de id=#ferias.
+    </h3>
+    <div>
+      Código <br>
+      $(document).ready(() => {
+      $("#ferias>li").first()
+      })
+    </div>
+
+    <h3>
+      8. Use a travessia com o método prev() para selecionar as férias que estão antes da
+      última (último elemento).
+    </h3>
+    <div>
+      Código <br>
+      $(document).ready(() => {
+      $("#ferias>li").last().prev()
+      })
+    </div>
+
+    <h3>
+      9. Observe o código abaixo. Usando travessia (passagem), selecione todos os passeios
+      que tenham uma classe chamada “.destaque” em seu título, obtendo o pai
+      (parent()) deles .
+    </h3>
+    <div id="tours-wrapper">
+      <h1>Passeios Guiados</h1>
+      <ul id="passeios">
+        <li class="usa">
+          <h2>New York, New York</h2>
+          <span class="details">$1,899 por 7 noites</span>
+          <ul class="vote">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+        <li class="europe">
+          <h2>Paris, France</h2>
+          <span class="details">$2,499 por 7 noites</span>
+          <ul class="vote">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+        <li class="europe sale">
+          <h2 class="destaque">Madrid, Spain</h2>
+          <span class="details">$1,577 por 5 noites</span>
+        </li>
+        <li class="asia">
+          <h2>Tokyo, Japan</h2>
+          <span class="details">$1,999 por 5 noites</span>
+          <ul class="vote">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="sorting">
+        <li><a href="#">America</a></li>
+        <li><a href="#">Europe</a></li>
+        <li><a href="#">Asia</a></li>
+      </ul>
+    </div>
+    <div>
+      Código <br>
+      $(document).ready(() => {
+      $(".destaque").parent()
+      })
+    </div>
+
+    <h3>
+      10. Você está olhando para a lista de exercícios anterior (do tempo antes de saber como
+      atravessar (traverse)), e se depara com o seletor que usou para selecionar todos as
+      viagens $("#viagens > li"); . Você agora percebe que este comando pode ser
+      feito melhor. Refaça o comando usando travessia com filhos (children).
+    </h3>
+    <div>
+      Código <br>
+      $(document).ready(() => {
+      $("#viagens").children("li")
+      })
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
