@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jquery 2</title>
+</head>
+
+<body>
+  <div id="viagens">
+    <h1>Viagens Guiadas</h1>
+    <ul>
+      <li class="usa tour">
+        <h2>New York, New York</h2>
+        <span class="details">$1,899 para 7 noites</span>
+        <br>
+        <button class="book">Reserve Agora</button>
+        <br>
+      </li>
+    </ul>
+  </div>
+
+  <h3>
+    1. Observe a instrução abaixo. Quando a página é carregada temos que mostrar uma
+    mensagem ao usuário para que ele saiba como reservar uma viagem. Para isso,
+    vamos criar um nó &ltspan> com nosso número de telefone (55-47-8888-4567-
+    jQuery-aerolinhas para reservar esta viagem) atribuindo este valor a uma
+    variável (JavaScript). Como você inicializaria a variável mensagem?
+  </h3>
+  <p>
+
+    var mensagem = $("&ltspan> 55-47-8888-4567-jQuery-aerolinhas &lt/span>")
+
+  </p>
+
+  <!-- ──────────────────── -->
+
+  <h3>
+    2. Adicione o número do telefone imediatamente antes (before()) do botão "RESERVE
+    AGORA".
+  </h3>
+
+  <p>
+    $(document).ready(() => { <br>
+    $(".book").before(mensagem) <br>
+    })
+  </p>
+
+
+  <!-- ──────────────────── -->
+
+  <h3>
+    3. Pensando bem, seria melhor acrescentar o nodo &ltspan> ao final do elemento
+    “.usa”.
+  </h3>
+  <p>
+    $(document).ready(() => { <br>
+    $("li.usa").append(mensagem) <br>
+    })
+  </p>
+
+  <!-- ──────────────────── -->
+
+  <h3>
+    4. Agora remova o botão "RESERVE AGORA" até que possamos implementá-lo
+    posteriormente.
+  </h3>
+
+  <p>
+    $(document).ready(() => { <br>
+    $("li.usa>.book").remove() <br>
+    })
+  </p>
+
+
+  <!-- ──────────────────── -->
+
+
+  <h3>
+    5. Agora insira um manipulador de eventos para que possamos remover um botão
+    quando este for clicado.
+  </h3>
+
+  <p>
+    $(document).ready(() => { <br>
+    $("li.usa>.book").on("click", () => { <br>
+    $("li.usa>.book").remove() <br>
+    }); <br>
+    })
+  </p>
+
+
+  <!-- ──────────────────── -->
+
+
+  <h3>
+    6. Alterar o manipulador do clique (evento) para ser acionado quando o item da lista
+    “.tour” for clicado.
+  </h3>
+
+  <p>
+
+    $("li.tour").on("click", () => { <br>
+    $("li.usa>.book").remove() <br>
+    });
+  </p>
+
+
+  <!-- ──────────────────── -->
+
+
+  <h3>
+    7. O código parece ter um problema. Ele nem sempre funciona quando a página é
+    carregada. Como fazer para que ele não seja executado até que o DOM seja
+    carregado?
+  </h3>
+
+  <p>
+    $(document).ready(() => { <br>
+    $("li.tour").on("click", () => { <br>
+    $("li.usa>.book").remove() <br>
+    }); <br>
+    })
+  </p>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
